@@ -75,7 +75,7 @@ export const projects: Project[] = [
     title: "Social Cloud – Sharing Compute Resources via Social Networks",
     category: "Cloud Architecture",
     tools: "Microsoft Azure, OSSN, Distributed Computing, Friend Trust Algorithm",
-    image: "/images/bond.png",
+    image: "/images/social_cloud.png",
     description: {
       intro:
         "Designed and developed a distributed computing platform leveraging social networks to enable efficient sharing of underutilized computing resources.",
