@@ -5,10 +5,20 @@ export function setCharTimeline(
   character: THREE.Object3D<THREE.Object3DEventMap> | null,
   camera: THREE.PerspectiveCamera
 ) {
-  let intensity: number = 0;
-  setInterval(() => {
-    intensity = Math.random();
-  }, 200);
+  // Use a simple GSAP animation for intensity instead of setInterval
+  const intensityObj = { value: 0 };
+  gsap.to(intensityObj, {
+    value: 1,
+    duration: 0.2,
+    repeat: -1,
+    repeatRefresh: true,
+    onRepeat: () => {
+      intensityObj.value = Math.random();
+    }
+  });
+
+
+
   const tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".landing-section",
@@ -53,7 +63,8 @@ export function setCharTimeline(
       object.material.opacity = 0;
       object.material.emissive.set("#B0F5EA");
       gsap.timeline({ repeat: -1, repeatRefresh: true }).to(object.material, {
-        emissiveIntensity: () => intensity * 8,
+        emissiveIntensity: () => intensityObj.value * 8,
+
         duration: () => Math.random() * 0.6,
         delay: () => Math.random() * 0.1,
       });

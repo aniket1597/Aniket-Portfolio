@@ -106,8 +106,9 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+      let frameId: number;
       const animate = () => {
-        requestAnimationFrame(animate);
+        frameId = requestAnimationFrame(animate);
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -125,25 +126,34 @@ const Scene = () => {
         }
         renderer.render(scene, camera);
       };
+      
       animate();
+      
+      const onResize = () => handleResize(renderer, camera, canvasDiv, character!);
+
+      window.addEventListener("resize", onResize);
+      
       return () => {
+        cancelAnimationFrame(frameId);
+
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();
-        window.removeEventListener("resize", () =>
-          handleResize(renderer, camera, canvasDiv, character!)
-        );
-        if (canvasDiv.current) {
+        window.removeEventListener("resize", onResize);
+        
+        if (canvasDiv.current && renderer.domElement.parentElement === canvasDiv.current) {
           canvasDiv.current.removeChild(renderer.domElement);
         }
+        
+        document.removeEventListener("mousemove", onMouseMove);
         if (landingDiv) {
-          document.removeEventListener("mousemove", onMouseMove);
           landingDiv.removeEventListener("touchstart", onTouchStart);
           landingDiv.removeEventListener("touchend", onTouchEnd);
         }
       };
     }
   }, []);
+
 
   return (
     <>

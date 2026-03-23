@@ -115,29 +115,28 @@ const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    let scrollTimeout: number;
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
-    };
-    document.querySelectorAll(".header a").forEach((elem) => {
-      const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", () => {
-        const interval = setInterval(() => {
-          handleScroll();
-        }, 10);
-        setTimeout(() => {
-          clearInterval(interval);
-        }, 1000);
+      cancelAnimationFrame(scrollTimeout);
+      scrollTimeout = requestAnimationFrame(() => {
+        const workElement = document.getElementById("work");
+        if (!workElement) return;
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        const threshold = workElement.getBoundingClientRect().top + scrollY;
+        setIsActive(scrollY > threshold - window.innerHeight);
       });
-    });
-    window.addEventListener("scroll", handleScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Initial call
+    handleScroll();
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(scrollTimeout);
     };
   }, []);
+
   const materials = useMemo(() => {
     const configs = [
       { text: "SAP", bg: "#8FAADC", fg: "#FFFFFF" },
