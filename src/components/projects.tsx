@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Technical Skills",
     category: "Core Competencies",
     tools: "",
-    image: "/images/radix.png",
+    image: "/images/tech_skills.png",
     skills: [
       {
         label: "SAP",
