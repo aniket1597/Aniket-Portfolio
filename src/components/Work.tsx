@@ -95,10 +95,25 @@ const Work = () => {
                             )}
                           </div>
                         )}
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
+                        {project.skills && (
+                          <div className="carousel-skills">
+                            <span className="tools-label">Key Competencies</span>
+                            <div className="skills-grid">
+                              {project.skills.map((skill, i) => (
+                                <div key={i} className="skill-item">
+                                  <span className="skill-label">{skill.label}:</span>
+                                  <span className="skill-value">{skill.value}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {project.tools && (
+                          <div className="carousel-tools">
+                            <span className="tools-label">Tools & Features</span>
+                            <p>{project.tools}</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">

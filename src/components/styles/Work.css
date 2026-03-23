@@ -158,6 +158,38 @@
   list-style-type: disc;
 }
 
+/* ── Skills Subsection ── */
+.carousel-skills {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-item {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skill-label {
+  color: var(--accentColor);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.skill-value {
+  color: #adacac;
+  font-weight: 200;
+}
+
 .carousel-image-wrapper {
   flex: 1;
   min-width: 0;

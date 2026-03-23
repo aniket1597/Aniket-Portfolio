@@ -8,6 +8,7 @@ export type Project = {
     bullets: string[];
     outro: string;
   };
+  skills?: { label: string; value: string }[];
 };
 
 export const projects: Project[] = [
@@ -30,11 +31,46 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "Oracle Cloud Migration",
-    category: "Cloud Migration",
-    tools: "Oracle Cloud, MySQL, OKA",
+    title: "Technical Skills",
+    category: "Core Competencies",
+    tools: "",
     image: "/images/radix.png",
+    skills: [
+      {
+        label: "SAP",
+        value:
+          "SAP Datasphere, SAP Business Data Cloud (end-to-end implementation, integration, security, architecture)",
+      },
+      {
+        label: "Azure",
+        value:
+          "IIS, VM, VPN (S2S), SQL Database, Blob Storage, Web Hosting (1.5+ yrs exp, 3+ yrs hands-on)",
+      },
+      {
+        label: "AWS",
+        value:
+          "EC2, Lambda, VPC, DynamoDB, S3, CloudWatch (incl. Spot Instances)",
+      },
+      {
+        label: "Databases",
+        value: "SAP HANA, SQL (MySQL), MongoDB",
+      },
+      {
+        label: "OS",
+        value: "Windows, Linux (Ubuntu, RedHat)",
+      },
+      {
+        label: "Networking",
+        value: "TCP/IP, OSI, routers/switches, Cisco Packet Tracer",
+      },
+      {
+        label: "System Admin",
+        value:
+          "Windows Server, AD, Exchange, O365, Linux setup & configuration",
+      },
+    ],
   },
+
   {
     title: "Social Cloud – Sharing Compute Resources via Social Networks",
     category: "Cloud Architecture",
