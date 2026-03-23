@@ -36,10 +36,22 @@ export const projects: Project[] = [
     image: "/images/radix.png",
   },
   {
-    title: "Social Cloud Resource Platform",
+    title: "Social Cloud – Sharing Compute Resources via Social Networks",
     category: "Cloud Architecture",
-    tools: "Microsoft Azure, OSN",
+    tools: "Microsoft Azure, OSSN, Distributed Computing, Friend Trust Algorithm",
     image: "/images/bond.png",
+    description: {
+      intro:
+        "Designed and developed a distributed computing platform leveraging social networks to enable efficient sharing of underutilized computing resources.",
+      bullets: [
+        "Architected the complete solution, including workflow design and system architecture",
+        "Built a social platform (OSSN-based) to facilitate peer-to-peer resource sharing",
+        "Introduced a pay-as-you-go model to incentivize resource providers",
+        "Improved compute utilization by dynamically distributing workloads across connected users",
+        "Deployed the solution on Microsoft Azure with scalable backend infrastructure",
+      ],
+      outro: "",
+    },
   },
 ];
 

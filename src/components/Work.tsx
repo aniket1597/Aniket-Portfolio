@@ -80,13 +80,19 @@ const Work = () => {
                           <div className="carousel-description">
                             <span className="tools-label">Description</span>
                             <p className="desc-intro">{project.description.intro}</p>
-                            <p className="desc-specialized">Specialized in:</p>
+                            <p className="desc-specialized">
+                              {project.description.outro !== undefined && project.description.outro === ""
+                                ? "Key contributions:"
+                                : "Specialized in:"}
+                            </p>
                             <ul className="desc-bullets">
                               {project.description.bullets.map((bullet, i) => (
                                 <li key={i}>{bullet}</li>
                               ))}
                             </ul>
-                            <p className="desc-outro">{project.description.outro}</p>
+                            {project.description.outro && (
+                              <p className="desc-outro">{project.description.outro}</p>
+                            )}
                           </div>
                         )}
                         <div className="carousel-tools">
