@@ -76,6 +76,19 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
+                        {project.description && (
+                          <div className="carousel-description">
+                            <span className="tools-label">Description</span>
+                            <p className="desc-intro">{project.description.intro}</p>
+                            <p className="desc-specialized">Specialized in:</p>
+                            <ul className="desc-bullets">
+                              {project.description.bullets.map((bullet, i) => (
+                                <li key={i}>{bullet}</li>
+                              ))}
+                            </ul>
+                            <p className="desc-outro">{project.description.outro}</p>
+                          </div>
+                        )}
                         <div className="carousel-tools">
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>

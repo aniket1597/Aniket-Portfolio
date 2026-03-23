@@ -107,6 +107,55 @@
   font-size: 15px;
 }
 
+/* ── Description Subsection ── */
+.carousel-description {
+  margin-top: 16px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.carousel-description .tools-label {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.desc-intro,
+.desc-outro {
+  font-weight: 200;
+  color: #adacac;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.desc-specialized {
+  font-weight: 300;
+  color: #c8c7c7;
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.desc-bullets {
+  margin: 2px 0 4px 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.desc-bullets li {
+  font-weight: 200;
+  color: #adacac;
+  font-size: 14px;
+  line-height: 1.6;
+  list-style-type: disc;
+}
+
 .carousel-image-wrapper {
   flex: 1;
   display: flex;
