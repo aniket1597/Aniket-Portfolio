@@ -11,4 +11,6 @@ Note: GSAP plugins are compelete free to use now and can be hosted on your webpa
 
 **Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
 
-![Portfolio-Preview](public/images/preview.png)
+-Aniket Agrawal
+
+
